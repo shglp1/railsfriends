@@ -1,0 +1,47 @@
+<%# app/views/friends/_form.html.erb %>
+<%= form_with(model: friend, local: true, html: { class: "needs-validation" }) do |f| %>
+  <div class="mb-3">
+    <%= f.label :firstName, "First Name", class: "form-label" %>
+    <%= f.text_field :firstName,
+          class: "form-control",
+          placeholder: "Enter first name",
+          autocomplete: "off",
+          required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :lastName, "Last Name", class: "form-label" %>
+    <%= f.text_field :lastName,
+          class: "form-control",
+          placeholder: "Enter last name",
+          autocomplete: "off",
+          required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :phone, "Phone", class: "form-label" %>
+    <%= f.number_field :phone,
+          class: "form-control",
+          placeholder: "Enter phone number",
+          min: 0,
+          required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :gender, "Gender", class: "form-label" %>
+    <%= f.select :gender, ["Male", "Female", "Other"],
+          { prompt: "Select gender" },
+          class: "form-select",
+          required: true %>
+  </div>
+
+  
+
+<div class="mt-4">
+  <%= f.submit "Save Changes", class: "btn btn-primary me-2" %>
+
+  <!-- this button should NOT call friend_path(friend) on #new -->
+  <%= link_to "Back", friends_path, class: "btn btn-secondary" %>
+</div>
+
+<% end %>

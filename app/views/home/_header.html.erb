@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid px-90 px-sm-9"> <!-- Reduced horizontal padding -->
+
+    <%= link_to "Friend App", root_path, class: "navbar-brand me-2" %> <!-- Reduced right margin -->
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav"> <!-- Changed to me-auto for proper left alignment -->
+        <li class="nav-item">
+          <%= link_to "About us", home_about_path, class: "nav-link px-2" %> <!-- Reduced padding -->
+        </li>
+      </ul>
+
+      <ul class="navbar-nav"> <!-- Removed flex-row and gap classes -->
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Add Friend", new_friend_path, class: "nav-link px-2" %> <!-- Reduced padding -->
+          </li>
+          <li class="nav-item">
+            <%= link_to "Friends List", friends_path, class: "nav-link px-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link px-2" %>
+          </li>
+          <li class="nav-item">           
+          <%= link_to "Sign out",
+              destroy_user_session_path,
+              data:  { turbo_method: :delete },
+              class: "nav-link text-danger fw-semibold" %>  <!-- red + bold -->
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path, class: "nav-link px-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link px-2" %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</nav>

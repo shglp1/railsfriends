@@ -1,0 +1,87 @@
+<%# app/views/home/index.html.erb %>
+<% content_for :title, "Home" %>
+
+<!-- ===== Hero / Jumbotron ===== -->
+<section class="py-5 bg-primary text-white text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3">FriendSaver</h1>
+    <p class="lead mx-auto" style="max-width: 640px;">
+      Hi, I’m <strong>Salem Shurrab</strong> and I built FriendSaver so you’ll never
+      forget a name, a number, or a birthday again.  
+      Store your friends’ details in seconds &amp; recall them in a click.  
+    </p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      <%= link_to "Add Your First Friend",
+                  new_friend_path,
+                  class: "btn btn-light btn-lg fw-semibold shadow-sm" %>
+
+      <%= link_to "View All Friends",
+                  friends_path,
+                  class: "btn btn-outline-light btn-lg fw-semibold" %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== How It Helps ===== -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Why you’ll love it</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <i class="bi bi-person-plus display-6 text-primary mb-3"></i>
+            <h5 class="card-title">Capture in Seconds</h5>
+            <p class="card-text text-muted">
+              Just a name and number? Or all the details?
+              Add as much (or as little) as you need—fast.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <i class="bi bi-search display-6 text-primary mb-3"></i>
+            <h5 class="card-title">Find Instantly</h5>
+            <p class="card-text text-muted">
+              Powerful search &amp; filters mean you’ll always find
+              the right friend—even if your list keeps growing.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body text-center">
+            <i class="bi bi-bell display-6 text-primary mb-3"></i>
+            <h5 class="card-title">Never Forget Again</h5>
+            <p class="card-text text-muted">
+              Optional birthday or reminder emails (coming soon!)
+              help you stay in touch at just the right moment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h3 class="fw-bold mb-3">Ready to start remembering?</h3>
+    <p class="text-muted mb-4">
+      Your friends will thank you later.
+      It’s free, private, and takes less than a minute to set up.
+    </p>
+
+    <%= link_to "Get Started Now",
+                new_friend_path,
+                class: "btn btn-success btn-lg px-4 shadow-sm" %>
+  </div>
+</section>
